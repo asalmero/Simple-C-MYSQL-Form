@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup25 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup26 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup27 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup28 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup10 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup11 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup12 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +45,11 @@
             this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -111,24 +116,24 @@
             this.Address});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            listViewGroup25.Header = "ListViewGroup";
-            listViewGroup25.Name = "id";
-            listViewGroup26.Header = "ListViewGroup";
-            listViewGroup26.Name = "F. Name";
-            listViewGroup27.Header = "ListViewGroup";
-            listViewGroup27.Name = "L. Name";
-            listViewGroup28.Header = "ListViewGroup";
-            listViewGroup28.Name = "Address";
+            listViewGroup9.Header = "ListViewGroup";
+            listViewGroup9.Name = "id";
+            listViewGroup10.Header = "ListViewGroup";
+            listViewGroup10.Name = "F. Name";
+            listViewGroup11.Header = "ListViewGroup";
+            listViewGroup11.Name = "L. Name";
+            listViewGroup12.Header = "ListViewGroup";
+            listViewGroup12.Name = "Address";
             this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup25,
-            listViewGroup26,
-            listViewGroup27,
-            listViewGroup28});
+            listViewGroup9,
+            listViewGroup10,
+            listViewGroup11,
+            listViewGroup12});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 84);
             this.listView1.Name = "listView1";
             this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.listView1.Size = new System.Drawing.Size(771, 272);
+            this.listView1.Size = new System.Drawing.Size(776, 272);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -142,22 +147,25 @@
             // Fname
             // 
             this.Fname.Text = "First Name";
+            this.Fname.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Fname.Width = 124;
             // 
             // Sname
             // 
-            this.Sname.Text = "Seccond Name";
+            this.Sname.Text = "Last Name";
+            this.Sname.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Sname.Width = 163;
             // 
             // Address
             // 
             this.Address.Text = "Address";
+            this.Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Address.Width = 247;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(44, 362);
+            this.button1.Location = new System.Drawing.Point(116, 396);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(218, 76);
             this.button1.TabIndex = 6;
@@ -168,7 +176,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(455, 362);
+            this.button2.Location = new System.Drawing.Point(577, 396);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(218, 76);
             this.button2.TabIndex = 7;
@@ -176,11 +184,69 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(803, 106);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Buscar (ID)";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(820, 129);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(55, 20);
+            this.textBox4.TabIndex = 9;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(794, 155);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(95, 53);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(794, 241);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(95, 26);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Modificar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(798, 330);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(95, 26);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "ELIMINAR";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(901, 504);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
@@ -213,6 +279,11 @@
         private System.Windows.Forms.ColumnHeader Address;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

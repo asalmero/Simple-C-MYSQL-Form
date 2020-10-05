@@ -59,8 +59,90 @@ namespace DATABASE
             }
 
         }
+        private void Eliminar()
+        {
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=user;";
+            string query = "DELETE FROM `test` WHERE id = '" + textBox4.Text + "' ";
+            MySqlConnection databaseConnection = new MySqlConnection(Connect);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            try
+            {
+
+                databaseConnection.Open();
+                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                MessageBox.Show("Dato Eliminado D:");
+                MostrarUsuarios();
+                databaseConnection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+       private void Actualizar()
+        {
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=user;";
+            string query = "UPDATE `test` SET `first_name`='"+textBox1.Text+ "',`last_name`='"+textBox2.Text+ "',`address`='"+textBox3.Text+"' WHERE id = '"+textBox4.Text+"' ";
+            MySqlConnection databaseConnection = new MySqlConnection(Connect);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            try
+            {
+
+                databaseConnection.Open();
+                MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                MessageBox.Show("Dato Actualizado :D");
+                databaseConnection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Buscar()
+        {
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=user;";
+            string query = "SELECT * FROM test where id= '"+textBox4.Text+"' ";
+            MySqlConnection databaseConnection = new MySqlConnection(Connect);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
 
 
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    listView1.Items.Clear();
+                    while (reader.Read())
+                    {
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3)};
+                      //  var ListViewItems = new ListViewItem(row);
+                        textBox1.Text = row[1];
+                        textBox2.Text = row[2];
+                        textBox3.Text = row[3];
+                        
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("No se encontro nada");
+                }
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
         private void GuardarUsuario()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=user;";
@@ -186,6 +268,34 @@ namespace DATABASE
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Buscar();
+            MostrarUsuarios();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Actualizar();
+            MostrarUsuarios();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MostrarUsuarios();
+            Eliminar();
         }
     }
 }
